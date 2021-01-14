@@ -16,7 +16,7 @@ except ImportError:
     print("")
     print("Original exception was:")
 
-from scripts import main
+from world import main
 
 if __name__ == '__main__':
     import sys
