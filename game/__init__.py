@@ -134,5 +134,5 @@ def main(floor=None):
     if floor:
         game.load_floor(floor)
     else:
-        game.load_floor('light')
+        game.load_floor('bells')
     game.run()
