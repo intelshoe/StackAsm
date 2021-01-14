@@ -20,7 +20,7 @@ class Game(ShowBase):
         self.scene.reparentTo(self.render)
         # Apply scale and position transforms on the model.
         self.scene.setScale(0.11, 0.11, 0.11)
-        self.scene.setPos(8, 37, -4)
+        self.scene.setPos(8, 34, -4)
 
 
 
