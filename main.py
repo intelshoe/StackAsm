@@ -1,6 +1,8 @@
 import pygame
 import parse_asm
+import sys
 
+code = sys.argv[1]
 pygame.init()
 
 screen = pygame.display.set_mode((800, 800))
