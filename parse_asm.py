@@ -1,4 +1,3 @@
-
 class Parse:
 	def __init__(self, code, code_type):
     	self.code = code
