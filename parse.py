@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Assmebly Parser 
-returns commented code explaining what asm is doing
+returns commented code explaining what each step is doing
 
 Author: mellowpuppy
 """
