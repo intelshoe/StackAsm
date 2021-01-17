@@ -10,11 +10,20 @@ import sys
 
 # read path to file + name from command line
 asm_file = sys.argv[1]
-formatted_code = ""
 
-# try opening the file
+# return code
+r_code = ""
+
+# try opening the file and copy contents into string
 try:
 	f = open(f'{asm_file}', 'r+')
-	print(f.read())
+	r_code = f.read()
+	f.close
+	print("Success! the file is copied to memory.")
 except:
 	print(f"Could not open file at location {asm_file}")
+
+
+
+
+print(r_code)
