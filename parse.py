@@ -23,5 +23,11 @@ try:
 except:
 	print(f"Could not open file at location {asm_file}")
 
-
 print(r_code)
+
+# test to make sure this file is gcc generated assembly
+try:
+	start = r_code.find(".text")
+	print(start)
+except:
+	print("This doesn't look like the right file type.")
