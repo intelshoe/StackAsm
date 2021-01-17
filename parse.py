@@ -9,6 +9,12 @@ Author: mellowpuppy
 import sys
 
 # read path to file + name from command line
-domain = sys.argv[1]
-asm_file = ""
+asm_file = sys.argv[1]
+formatted_code = ""
 
+# try opening the file
+try:
+	f = open(f"{asm_file}")
+	print(f"{f}")
+except:
+	print(f"Could not open file at location {asm_file}")
