@@ -1,19 +1,22 @@
 import pygame
-import parse_asm
 import sys
 
-code = sys.argv[1]
 pygame.init()
 
+background_position=[0,0]
 screen = pygame.display.set_mode((800, 800))
 bg = pygame.image.load("forest.jpg")
+button = pygame.image.load("easy.png")
 running = True
 
 while running:
 	# Check for input
 	for event in pygame.event.get():
+		# close program if x clicked
 		if event.type == pygame.QUIT:
 			running = False
+		if event.type == pygame.MOUSEBUTTONDOWN:
+			
 
 	# Update game elements
 
@@ -21,7 +24,7 @@ while running:
 	# renders blocks and text as needed
 
 	# Draw and show game surface
-	screen.blit(bg, bg.get_rect())
+	screen.blit(bg, background_position)
 	pygame.display.update()
 
 pygame.quit()
