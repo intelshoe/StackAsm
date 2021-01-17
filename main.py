@@ -16,7 +16,6 @@ imgX = 800 * 0.45
 imgY = 800 * 0.4
 
 mouseStartX = mouseStartY = mouseEndX = mouseEndY = 0
-text = ''
 focus = None
 running = True
 MAX_FPS = 60
