@@ -14,7 +14,7 @@ formatted_code = ""
 
 # try opening the file
 try:
-	f = open(f"{asm_file}")
-	print(f"{f}")
+	f = open(f'{asm_file}', 'r+')
+	print(f.read())
 except:
 	print(f"Could not open file at location {asm_file}")
