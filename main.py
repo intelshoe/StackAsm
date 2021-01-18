@@ -9,13 +9,19 @@ pygame.display.set_caption("StackAsm")
 bg = pygame.image.load("forest.jpg")
 img = pygame.image.load("easy.jpg")
 img = pygame.transform.scale(img, (80, 80))
+img2 = pygame.image.load("easy.jpg")
+img2 = pygame.transform.scale(img, (80, 80))
 
 
-#setup button position
+#setup button1 position
 imgX = 800 * 0.45
 imgY = 800 * 0.4
-
 mouseStartX = mouseStartY = mouseEndX = mouseEndY = 0
+#setup button2 position
+img2X = 800 * 0.45
+img2Y = 800 * 0.4
+mouse2StartX = mouse2StartY = mouse2EndX = mouse2EndY = 0
+
 focus = None
 running = True
 MAX_FPS = 60
@@ -27,11 +33,14 @@ while running:
 		# close program if x clicked
 		if event.type == pygame.QUIT:
 			running = False
-		elif event.type == pygame.MOUSEBUTTONDOWN:
+		if event.type == pygame.MOUSEBUTTONDOWN:
 			# imgX, imgY = pygame.mouse.get_pos()
 			if img.get_rect().move(imgX, imgY).collidepoint(pygame.mouse.get_pos()):
 				focus = 'image'
 				mouseStartX, mouseStartY = pygame.mouse.get_pos()
+			elif img2.get_rect().move(img2X, img2Y).collidepoint(pygame.mouse.get_pos()):
+				focus = 'image2'
+				mouse2StartX, mouse2StartY = pygame.mouse.get_pos()
 			else:
 				focus = None
 		elif focus == 'image' and event.type == pygame.MOUSEBUTTONUP:
@@ -50,9 +59,26 @@ while running:
 				imgX -= 3
 			if keys[pygame.K_d]:
 				imgX += 3	
+		elif focus == 'image2' and event.type == pygame.MOUSEBUTTONUP:
+			mouse2EndX, mouse2EndY = pygame.mouse.get_pos()
+			delta2MouseX = mouse2EndX - mouse2StartX
+			delta2MouseY = mouse2EndY - mouse2StartY
+			img2X += delta2MouseX
+			img2Y += delta2MouseY	
+		if focus == "image2":
+			keys = pygame.key.get_pressed()
+			if keys[pygame.K_w]:
+				img2Y -= 3
+			if keys[pygame.K_s]:
+				img2Y += 3
+			if keys[pygame.K_a]:
+				img2X -= 3
+			if keys[pygame.K_d]:
+				img2X += 3	
 
 	screen.blit(bg, background_position)
 	screen.blit(img, (imgX, imgY))
+	screen.blit(img2, (img2X, img2Y))
 	pygame.display.update()
 	# pause for frames
 	clock.tick(MAX_FPS)
