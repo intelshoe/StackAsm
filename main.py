@@ -28,7 +28,7 @@ clock = pygame.time.Clock()
 
 
 def move_img(img):
-	global focus, imgX, imgY
+	global focus, imgX, imgY, mouseStartX, mouseStartY, mouseEndX, mouseEndY
 	if event.type == pygame.MOUSEBUTTONDOWN:
 		# imgX, imgY = pygame.mouse.get_pos()
 		if img.get_rect().move(imgX, imgY).collidepoint(pygame.mouse.get_pos()):
