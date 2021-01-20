@@ -7,6 +7,8 @@ class Button:
 	'''
 	def __init__(self, screen):
 		self.button1 = pygame.image.load(os.path.join("assets\\buttons", "blockhead.jpg"))
+		self.button2 = pygame.image.load(os.path.join("assets\\buttons", "blockhead.jpg"))
+		self.buttons = [self.button1, self.button2]
 		self.screen = screen
 
 	def draw(self):
@@ -16,11 +18,13 @@ class Button:
 		:return: none
 		"""
 		buttonY = 0
-		for x in range(3):
-			self.button1 = pygame.transform.scale(self.button1, (80, 80))
-			self.button1.convert()
-			self.screen.blit(self.button1, (0,buttonY))
+		b = 0
+		for x in self.buttons:
+			self.buttons[b] = pygame.transform.scale(self.buttons[b], (80, 80))
+			self.buttons[b].convert()
+			self.screen.blit(self.buttons[b], (0,buttonY))
 			buttonY += 80
+			b += 1
 
 	def info(self):
 		"""
@@ -36,5 +40,6 @@ class Button:
 		Move button.
 		:return: None
 		"""
+
 
 		pass
