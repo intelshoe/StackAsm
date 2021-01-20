@@ -12,7 +12,7 @@ class Button:
 	def draw(self):
 		"""
 		Prints buttons to screen from button assets.
-		:peram win: the background
+		:peram: none
 		:return: none
 		"""
 		buttonY = 0
