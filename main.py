@@ -12,6 +12,9 @@ class App:
 		self.bg = pygame.image.load(os.path.join("assets\\bg", "forest.jpg"))
 		self.button1 = pygame.image.load(os.path.join("assets\\buttons", "blockhead.jpg"))
 		self.button1 = pygame.transform.scale(self.button1, (80, 80))
+		self.button1.convert()
+
+		
 
 	def run(self):
 		run = True
@@ -28,7 +31,10 @@ class App:
 
 	def draw(self):
 		self.screen.blit(self.bg, (0,0))
-		self.screen.blit(self.button1, (0,0))
+		buttonY = 0
+		for x in range(3):
+			self.screen.blit(self.button1, (0,buttonY))
+			buttonY += 80
 		pygame.display.update()
 		
 
