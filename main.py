@@ -1,20 +1,25 @@
 import pygame
 import os
 import time
+from button import Button
 
+# StackAsm - stackevolve.com
 pygame.display.set_caption("StackAsm")
 
 class App:
 	def __init__(self):
-		self.width = 800
-		self.height = 800
-		self.screen = pygame.display.set_mode((self.width, self.height))
-		self.bg = pygame.image.load(os.path.join("assets\\bg", "forest.jpg"))
-		self.button1 = pygame.image.load(os.path.join("assets\\buttons", "blockhead.jpg"))
-		self.button1 = pygame.transform.scale(self.button1, (80, 80))
-		self.button1.convert()
+		#application width and height
+		self.w = 800
+		self.h = 800
+		self.screen = pygame.display.set_mode((self.w, self.h))
 
-		
+		# set background variables
+		#self.bgs = []
+		self.bg = pygame.image.load(os.path.join("assets\\bg", "forest.jpg"))
+
+		# set button images and scale
+		#self.buttons = []
+		self.btns = Button(self.screen)
 
 	def run(self):
 		run = True
@@ -27,14 +32,13 @@ class App:
 
 			self.draw()
 
+
 		pygame.quit()
 
 	def draw(self):
+		# draws background and buttons to screen
 		self.screen.blit(self.bg, (0,0))
-		buttonY = 0
-		for x in range(3):
-			self.screen.blit(self.button1, (0,buttonY))
-			buttonY += 80
+		self.btns.draw(self.screen)
 		pygame.display.update()
 		
 

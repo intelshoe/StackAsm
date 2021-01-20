@@ -1,34 +1,35 @@
 import pygame
+import os
 
 class Button:
-	imgs = []
 	'''
 	Makes a button class representing a piece of Assembly
 	'''
-	def __init__(self, x, y):
-		self.x = x
-		self.y = y
-		self.width = 80
-		self.height = 80
-		self.img = None
+	def __init__(self, screen):
+		self.button1 = pygame.image.load(os.path.join("assets\\buttons", "blockhead.jpg"))
+		self.button1 = pygame.transform.scale(self.button1, (80, 80))
+		self.button1.convert()
+		self.screen = None
 
-	def draw(self, win):
+	def draw(self, screen):
 		"""
 		Prints buttons to screen from button assets.
 		:peram win: the background
 		:return: none
 		"""
-		self.img = self.imgs
-		self.screen = blit(self.img, (self.x, self.y))
+		buttonY = 0
+		for x in range(3):
+			self.screen.blit(self.button1, (0,buttonY))
+			buttonY += 80
 
-	def info(self, x, y):
+	def info(self):
 		"""
 		Returns button info if clicked
 		:peram x: int
 		:peram y: int
 		:return: String
 		"""
-
+		pass
 
 	def move(self):
 		"""
