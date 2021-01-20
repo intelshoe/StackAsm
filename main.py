@@ -10,7 +10,7 @@ class App:
 		self.height = 800
 		self.screen = pygame.display.set_mode((self.width, self.height))
 		
-		self.bg = pygame.image.load(os.path.join("assets", "forest.jpg"))
+		self.bg = pygame.image.load(os.path.join("assets\\bg", "forest.jpg"))
 		self.buttons = []
 
 	def run(self):
