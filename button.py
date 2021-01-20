@@ -9,9 +9,9 @@ class Button:
 		self.button1 = pygame.image.load(os.path.join("assets\\buttons", "blockhead.jpg"))
 		self.button1 = pygame.transform.scale(self.button1, (80, 80))
 		self.button1.convert()
-		self.screen = None
+		self.screen = screen
 
-	def draw(self, screen):
+	def draw(self):
 		"""
 		Prints buttons to screen from button assets.
 		:peram win: the background
@@ -38,4 +38,3 @@ class Button:
 		"""
 
 		pass
-

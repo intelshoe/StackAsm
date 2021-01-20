@@ -38,7 +38,7 @@ class App:
 	def draw(self):
 		# draws background and buttons to screen
 		self.screen.blit(self.bg, (0,0))
-		self.btns.draw(self.screen)
+		self.btns.draw()
 		pygame.display.update()
 		
 
