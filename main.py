@@ -46,13 +46,13 @@ def move_img(img, index):
 	if focus[index] == "image":
 		keys = pygame.key.get_pressed()
 		if keys[pygame.K_w]:
-			imgY[index] -= 1
+			imgY[index] -= .5
 		if keys[pygame.K_s]:
-			imgY[index] += 1
+			imgY[index] += .5
 		if keys[pygame.K_a]:
-			imgX[index] -= 1
+			imgX[index] -= .5
 		if keys[pygame.K_d]:
-			imgX[index] += 1
+			imgX[index] += .5
 		if keys[pygame.K_r]:
 			imgX[index] = 0
 			imgY[index] = startY[index]
