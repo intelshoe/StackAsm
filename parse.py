@@ -3,8 +3,6 @@
 """
 Assmebly Parser 
 returns commented code explaining what each step is doing
-
-Author: mellowpuppy
 """
 import sys
 
