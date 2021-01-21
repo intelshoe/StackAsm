@@ -4,12 +4,12 @@ import time
 
 btn_total = 6
 
-#application width and height
+# application width and height
 w = 800
 h = 800
 screen = pygame.display.set_mode((w, h))
 
-#sets window icon and caption
+# sets window icon and caption
 sa_icon = pygame.image.load("sa_icon.jpg")
 sa_icon = pygame.transform.scale(sa_icon, (32, 32))
 sa_icon.convert()
@@ -25,7 +25,7 @@ for x in range(btn_total):
 	buttons.append(pygame.image.load(os.path.join("assets\\buttons", f"{x}.png")))
 	buttons[x] = pygame.transform.scale(buttons[x], (80, 80))
 	buttons[x].convert()
-
+# set button starting positions
 focus = []
 imgX = []
 imgY = []
@@ -42,7 +42,6 @@ for x in range(btn_total):
 def move_img(img, index):
 	global focus, imgX, imgY, startY
 	if event.type == pygame.MOUSEBUTTONDOWN:
-		# imgX, imgY = pygame.mouse.get_pos()
 		if img.get_rect().move(imgX[index], imgY[index]).collidepoint(pygame.mouse.get_pos()):
 			focus[index] = 'image'
 		else:
