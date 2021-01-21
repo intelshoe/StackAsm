@@ -5,42 +5,75 @@ from button import Button
 
 pygame.display.set_caption("StackAsm")
 
-class App:
-	def __init__(self):
-		#application width and height
-		self.w = 800
-		self.h = 800
-		self.screen = pygame.display.set_mode((self.w, self.h))
+btn_total = 6
 
-		# set background variables
-		#self.bgs = []
-		self.bg = pygame.image.load(os.path.join("assets\\bg", "forest.jpg"))
+#application width and height
+w = 800
+h = 800
+screen = pygame.display.set_mode((w, h))
 
-		# set button images and scale
-		#self.buttons = []
-		self.btns = Button(self.screen)
+# set background variables
+bg = pygame.image.load(os.path.join("assets\\bg", "forest.jpg"))
 
-	def run(self):
-		run = True
-		clock = pygame.time.Clock()
-		while run:
-			clock.tick(60)
-			for event in pygame.event.get():
-				if event.type == pygame.QUIT:
-					run = False
+# set button images and scale
+buttons = []
+for x in range(btn_total): 
+	buttons.append(pygame.image.load(os.path.join("assets\\buttons", f"{x}.png")))
+	buttons[x] = pygame.transform.scale(buttons[x], (80, 80))
+	buttons[x].convert()
 
-			self.draw()
+focus = []
+imgX = []
+imgY = []
+startY = []
+i = 0
+for x in range(btn_total):
+	focus.append(None)
+	imgX.append(0)
+	imgY.append(i)
+	startY.append(i)
+	i += 84
 
 
-		pygame.quit()
+def move_img(img, index):
+	global focus, imgX, imgY, startY
+	if event.type == pygame.MOUSEBUTTONDOWN:
+		# imgX, imgY = pygame.mouse.get_pos()
+		if img.get_rect().move(imgX[index], imgY[index]).collidepoint(pygame.mouse.get_pos()):
+			focus[index] = 'image'
+		else:
+			focus[index] = None
+	if focus[index] == "image":
+		keys = pygame.key.get_pressed()
+		if keys[pygame.K_w]:
+			imgY[index] -= 1
+		if keys[pygame.K_s]:
+			imgY[index] += 1
+		if keys[pygame.K_a]:
+			imgX[index] -= 1
+		if keys[pygame.K_d]:
+			imgX[index] += 1
+		if keys[pygame.K_r]:
+			imgX[index] = 0
+			imgY[index] = startY[index]
+	return (imgX[index], imgY[index])
 
-	def draw(self):
-		# draws background and buttons to screen
-		self.screen.blit(self.bg, (0,0))
-		self.btns.draw()
-		pygame.display.update()
+
+run = True
+clock = pygame.time.Clock()
+clock.tick(60)
+while run:
+	for event in pygame.event.get():
+		if event.type == pygame.QUIT:
+			run = False
+
 		
 
+	screen.blit(bg, (0,0))
 
-a = App()
-a.run()
+	for x in range(btn_total):
+		screen.blit(buttons[x], move_img(buttons[x], x))
+
+	pygame.display.update()
+pygame.quit()
+	
