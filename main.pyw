@@ -38,7 +38,7 @@ for x in range(btn_total):
 	startY.append(i)
 	i += 84
 
-
+# moves the buttons if clicked
 def move_img(img, index):
 	global focus, imgX, imgY, startY
 	if event.type == pygame.MOUSEBUTTONDOWN:
@@ -46,6 +46,7 @@ def move_img(img, index):
 			focus[index] = 'image'
 		else:
 			focus[index] = None
+	# controls keys for moving buttons
 	if focus[index] == "image":
 		keys = pygame.key.get_pressed()
 		if keys[pygame.K_w]:
@@ -56,27 +57,27 @@ def move_img(img, index):
 			imgX[index] -= .5
 		if keys[pygame.K_d]:
 			imgX[index] += .5
+		# put button to start if R key pressed
 		if keys[pygame.K_r]:
 			imgX[index] = 0
 			imgY[index] = startY[index]
 	return (imgX[index], imgY[index])
 
-
+# actual app loop
 run = True
 clock = pygame.time.Clock()
 clock.tick(60)
 while run:
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
-			run = False
+			run = False  # quits app if X pressed
 
-		
-
-	screen.blit(bg, (0,0))
-
+	# print buttons and background to screen
+	screen.blit(bg, (0,0)) # bg
 	for x in range(btn_total):
 		screen.blit(buttons[x], move_img(buttons[x], x))
-
 	pygame.display.update()
+
+# quit if X is clicked
 pygame.quit()
 	
