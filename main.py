@@ -1,7 +1,6 @@
 import pygame
 import os
 import time
-from button import Button
 
 pygame.display.set_caption("StackAsm")
 
