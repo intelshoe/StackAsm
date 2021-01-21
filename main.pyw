@@ -4,7 +4,7 @@ import time
 
 btn_total = 6
 
-# application size
+# application window size
 w = 800
 h = 800
 screen = pygame.display.set_mode((w, h))
