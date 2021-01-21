@@ -2,14 +2,19 @@ import pygame
 import os
 import time
 
-pygame.display.set_caption("StackAsm")
-
 btn_total = 6
 
 #application width and height
 w = 800
 h = 800
 screen = pygame.display.set_mode((w, h))
+
+#sets window icon and caption
+sa_icon = pygame.image.load("sa_icon.jpg")
+sa_icon = pygame.transform.scale(sa_icon, (32, 32))
+sa_icon.convert()
+pygame.display.set_icon(sa_icon)
+pygame.display.set_caption("StackAsm")
 
 # set background variables
 bg = pygame.image.load(os.path.join("assets\\bg", "forest.jpg"))
