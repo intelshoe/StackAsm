@@ -11,6 +11,15 @@ class Button:
 		self.buttons = [self.b1, self.b2]
 		self.screen = screen
 
+		self.focus = None
+		self.imgX = 0
+		self.imgY = 0
+		self.mouseStartX = None
+		self.mouseStartY = None
+		self.mouseEndX = None
+		self.mouseEndY = None
+
+		self.i = 0
 
 	def draw(self):
 		"""
@@ -19,12 +28,12 @@ class Button:
 		:return: none
 		"""
 		self.b = 0
+		self.move()
 		for x in self.buttons:
 			self.buttons[self.b] = pygame.transform.scale(self.buttons[self.b], (80, 80))
 			self.buttons[self.b].convert()
-			self.screen.blit(self.buttons[self.b], (self.move()))
+			self.screen.blit(self.buttons[self.b], (self.imgX, self.imgY))
 			self.b += 1
-			
 
 
 	def info(self):
@@ -41,7 +50,34 @@ class Button:
 		
 		:return: 
 		"""
-		if self.b == 0:
-			return [0,0]
+		if self.i == 0:
+			self.i += 1
+			pass
+		if self.i == 1:
+			self.i += 1
+			self.imgY += 84
 		else:
-			return [0, 84]
+			for event in pygame.event.get():
+				if event.type == pygame.MOUSEBUTTONDOWN:
+					if self.buttons[1].get_rect().move(self.imgX, self.imgY).collidepoint(pygame.mouse.get_pos()):
+						self.focus = 'image'
+						self.mouseStartX, self.mouseStartY = pygame.mouse.get_pos()
+					else:
+						self.focus = None
+					if self.focus == 'image' and event.type == pygame.MOUSEBUTTONUP:
+						self.mouseEndX, self.mouseEndY = self.pygame.mouse.get_pos()
+						self.deltaMouseX = self.mouseEndX - self.mouseStartX
+						self.deltaMouseY = self.mouseEndY - self.mouseStartY
+						self.imgX += self.deltaMouseX
+						self.imgY += self.deltaMouseY	
+					elif self.focus == "image":
+						self.keys = pygame.key.get_pressed()
+						if self.keys[pygame.K_w]:
+							self.imgY -= 3
+						if self.keys[pygame.K_s]:
+							self.imgY += 3
+						if self.keys[pygame.K_a]:
+							self.imgX -= 3
+						if self.keys[pygame.K_d]:
+							self.imgX += 3
+
