@@ -8,11 +8,11 @@ class Button:
 	def __init__(self, screen):
 		self.screen = screen
 		self.buttons = []
-		for x in range(8): 
-			self.b1 = pygame.image.load(os.path.join("assets\\buttons", f"{x}.jpg"))
-			self.b1 = pygame.transform.scale(self.b1, (80, 80))
-			self.b1.convert()
-			self.buttons.append(self.b1)
+		for x in range(6): 
+			self.b = pygame.image.load(os.path.join("assets\\buttons", f"{x}.png"))
+			self.b = pygame.transform.scale(self.b, (80, 80))
+			self.b.convert()
+			self.buttons.append(self.b)
 
 
 
@@ -24,9 +24,12 @@ class Button:
 		"""
 		
 		self.y = 0
-		for x in range (8):
+		for x in range (6):
 			self.screen.blit(self.buttons[x], (0,self.y))
 			self.y += 84
+		for event in pygame.event.get():
+			if event.type == pygame.MOUSEBUTTONDOWN:
+				print("hello!")
 
 
 
