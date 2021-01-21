@@ -6,10 +6,11 @@ class Button:
 	Makes a button list representing Assembly
 	'''
 	def __init__(self, screen):
-		self.button1 = pygame.image.load(os.path.join("assets\\buttons", "blockhead.jpg"))
-		self.button2 = pygame.image.load(os.path.join("assets\\buttons", "blockhead.jpg"))
-		self.buttons = [self.button1, self.button2]
+		self.b1 = pygame.image.load(os.path.join("assets\\buttons", "blockhead.jpg"))
+		self.b2 = pygame.image.load(os.path.join("assets\\buttons", "blockhead.jpg"))
+		self.buttons = [self.b1, self.b2]
 		self.screen = screen
+
 
 	def draw(self):
 		"""
@@ -17,14 +18,14 @@ class Button:
 		:peram: none
 		:return: none
 		"""
-		buttonY = 0
-		b = 0
+		self.b = 0
 		for x in self.buttons:
-			self.buttons[b] = pygame.transform.scale(self.buttons[b], (80, 80))
-			self.buttons[b].convert()
-			self.screen.blit(self.buttons[b], (0,buttonY))
-			buttonY += 80
-			b += 1
+			self.buttons[self.b] = pygame.transform.scale(self.buttons[self.b], (80, 80))
+			self.buttons[self.b].convert()
+			self.screen.blit(self.buttons[self.b], (self.move()))
+			self.b += 1
+			
+
 
 	def info(self):
 		"""
@@ -37,9 +38,10 @@ class Button:
 
 	def move(self):
 		"""
-		Move button.
-		:return: None
+		
+		:return: 
 		"""
-
-
-		pass
+		if self.b == 0:
+			return [0,0]
+		else:
+			return [0, 84]

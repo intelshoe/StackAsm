@@ -3,7 +3,6 @@ import os
 import time
 from button import Button
 
-# StackAsm - stackevolve.com
 pygame.display.set_caption("StackAsm")
 
 class App:
