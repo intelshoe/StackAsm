@@ -25,7 +25,7 @@ for x in range(btn_total):
 	buttons.append(pygame.image.load(os.path.join("assets\\buttons", f"{x}.png")))
 	buttons[x] = pygame.transform.scale(buttons[x], (80, 80))
 	buttons[x].convert()
-# set button starting positions
+# set button start position variables
 focus = []
 imgX = []
 imgY = []
