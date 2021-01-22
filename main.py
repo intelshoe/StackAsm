@@ -12,7 +12,6 @@ screen = pygame.display.set_mode((w, h))
 # sets window icon and caption
 sa_icon = pygame.image.load("sa_icon.png")
 sa_icon = pygame.transform.scale(sa_icon, (32, 32))
-sa_icon.convert()
 pygame.display.set_icon(sa_icon)
 pygame.display.set_caption("StackAsm")
 
