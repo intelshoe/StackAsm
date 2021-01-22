@@ -2,7 +2,7 @@ import pygame
 import os
 import time
 
-btn_total = 6
+btn_total = 3
 
 # application window size
 w = 800
@@ -10,7 +10,7 @@ h = 800
 screen = pygame.display.set_mode((w, h))
 
 # sets window icon and caption
-sa_icon = pygame.image.load("sa_icon.jpg")
+sa_icon = pygame.image.load("sa_icon.png")
 sa_icon = pygame.transform.scale(sa_icon, (32, 32))
 sa_icon.convert()
 pygame.display.set_icon(sa_icon)
@@ -25,7 +25,7 @@ for x in range(btn_total):
 	buttons.append(pygame.image.load(os.path.join("assets\\buttons", f"{x}.png")))
 	buttons[x] = pygame.transform.scale(buttons[x], (80, 80))
 	buttons[x].convert()
-# set button start position variables
+# set button starting positions
 focus = []
 imgX = []
 imgY = []
@@ -80,4 +80,4 @@ while run:
 
 # quit if X is clicked
 pygame.quit()
-	
+
