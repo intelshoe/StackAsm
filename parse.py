@@ -29,3 +29,5 @@ try:
 	print(start)
 except:
 	print("This doesn't look like the right file type.")
+
+# need to then sort each keyword into buttons and each row into a list for printing
