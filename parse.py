@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-Assmebly Parser 
+Assembly Parser 
 
 Author: n-vizion / info@stackevolve.com
 """
