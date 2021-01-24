@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 """
 Assmebly Parser 
-returns commented code explaining what each step is doing
+
+Author: n-vizion / info@stackevolve.com
 """
 
 class ParseAsm:

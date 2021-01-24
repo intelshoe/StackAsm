@@ -1,3 +1,11 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""
+2D Visual Assmebly Tool
+
+Author: n-vizion / info@stackevolve.com
+"""
+
 import pygame
 import os
 import time
