@@ -1,8 +1,15 @@
 import pygame
 import os
 import time
+import sys
+from parse import ParseAsm
 
-btn_total = 3
+# read path to file + name from command line
+asm_file = sys.argv[1]
+
+p1 = ParseAsm(asm_file)
+
+btn_total = p1.getTotal()
 
 # application window size
 w = 800
