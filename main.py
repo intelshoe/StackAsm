@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-2D Visual Assmebly Tool
+2D Visual Assembly Tool
 
 Author: n-vizion / info@stackevolve.com
 """
