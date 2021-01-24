@@ -37,6 +37,7 @@ for x in range(btn_total):
 	startY.append(i)
 	i += 84
 
+
 # moves the buttons if clicked
 def move_img(img, index):
 	global focus, imgX, imgY, startY
@@ -61,6 +62,8 @@ def move_img(img, index):
 			imgX[index] = 0
 			imgY[index] = startY[index]
 	return (imgX[index], imgY[index])
+
+
 
 # actual app loop
 run = True

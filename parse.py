@@ -21,7 +21,6 @@ try:
 except:
 	print(f"Could not open file at location {asm_file}")
 
-print(r_code)
 
 # test to make sure this file is gcc generated assembly
 try:
@@ -29,3 +28,9 @@ try:
 	print(start)
 except:
 	print("This doesn't look like the right file type.")
+
+
+# copy the start of the code to a new string for parsing
+asm = r_code[start:]
+
+print(asm)
