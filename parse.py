@@ -16,7 +16,6 @@ class ParseAsm:
 		self.asm_lines = []
 
 	def getTotal(self):
-
 		# try opening the file and copy contents into string
 		try:
 			self.f = open(f'{self.asm_file}', 'r+')
