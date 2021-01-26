@@ -6,6 +6,8 @@ Assembly Parser
 Author: n-vizion / info@stackevolve.com
 """
 
+# todo - change from lists to set for speed and performance
+
 class ParseAsm:
 	def __init__(self, asm_file):
 		self.asm_file = asm_file
