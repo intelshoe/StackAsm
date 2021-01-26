@@ -6,6 +6,8 @@
 Author: n-vizion / info@stackevolve.com
 """
 
+# todo - change from lists to set for speed and performance
+
 import pygame
 import os
 import time
