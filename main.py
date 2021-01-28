@@ -3,7 +3,7 @@
 """
 2D Visual Assembly Tool
 
-Author: n-vizion / info@stackevolve.com
+Author: mp / info@stackevolve.com
 """
 
 # todo - change from lists to set for speed and performance
